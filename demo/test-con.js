@@ -1,7 +1,7 @@
-const Contest = require('../index')
+const Contester = require('../index')
 
 
-const contest = new Contest([
+const contester = new Contester([
   {
     name: 'mysql',
     uri: 'mysql://root:1234678@localhost:3306/mysqldb'
@@ -20,4 +20,4 @@ const contest = new Contest([
   }
 ])
 
-contest.run()
+contester.run()

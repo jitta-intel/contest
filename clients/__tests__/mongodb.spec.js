@@ -1,4 +1,4 @@
-const testMongo = require("../mongo")
+const testMongo = require('../mongodb')
 
 // TODO: create db for test?
 

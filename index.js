@@ -3,7 +3,7 @@ const Promise = require('bluebird')
 const clients = require('./clients')
 
 
-class Contest {
+class Contester {
   /* conlist[] = [{
     name:
     uri:
@@ -26,7 +26,7 @@ class Contest {
 
   async run() {
     const result = Promise.map(this.conlist, async ({ name, uri, note }) =>{
-      const result = await Contest.test(uri)
+      const result = await Contester.test(uri)
       console.log({ name, uri, result })
       return {
         name,
@@ -40,4 +40,4 @@ class Contest {
   }
 }
 
-module.exports = Contest
+module.exports = Contester
