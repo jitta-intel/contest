@@ -1,0 +1,19 @@
+{
+  "name": "contest",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Manoch Changsalak",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "bluebird": "^3.7.2",
+    "ioredis": "^4.19.4",
+    "mongodb": "^3.6.3",
+    "mysql": "^2.18.1",
+    "url-parse": "^1.4.7"
+  }
+}
