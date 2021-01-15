@@ -38,6 +38,13 @@ describe('Contester', () => {
       expect(result.pass).toEqual(false)
     })
 
+    it('should call http for http protocol', async () => {
+      const url = 'https://localhost:3000'
+      const result = await Contester.test(url)
+      expect(clients.http).toHaveBeenCalled()
+      expect(result.pass).toEqual(false)
+    })
+
     it('should call redis for redis protocol', async () => {
       const url = 'redis://localhost:6376'
       const result = await Contester.test(url)

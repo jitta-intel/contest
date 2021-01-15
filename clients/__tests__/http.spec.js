@@ -45,6 +45,14 @@ describe('Http', () => {
     })
   })
 
+  test('should report fail connection on https', async () => {
+    const result = await testHttp('https://localhost:3333')
+    expect(result).toEqual({
+      pass: false,
+      message: 'Network Error',
+    })
+  })
+
   test('should report failed connection', async () => {
     const result = await testHttp(`${uri}/notfound`)
     expect(result).toEqual({

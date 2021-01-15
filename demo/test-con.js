@@ -11,6 +11,10 @@ const contester = new Contester([
     uri: 'http://google.co.th'
   },
   {
+    name: 'google',
+    uri: 'https://google.co.th'
+  },
+  {
     name: 'redis',
     uri: 'redis://localhost:6376/2'
   },
