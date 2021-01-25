@@ -10,12 +10,14 @@ describe('Contester', () => {
       jest.spyOn(clients, 'redis')
       jest.spyOn(clients, 'http')
       jest.spyOn(clients, 'mysql')
+      jest.spyOn(clients, 'mssql')
     })
     afterAll(() => {
       clients.mongodb.mockRestore()
       clients.redis.mockRestore()
       clients.http.mockRestore()
       clients.mysql.mockRestore()
+      clients.mssql.mockRestore()
     })
     it('should call mongodb for mongodb protocol', async () => {
       const url = 'mongodb://localhost:27017'
@@ -50,6 +52,17 @@ describe('Contester', () => {
       const result = await Contester.test(url)
       expect(clients.mongodb).toHaveBeenCalled()
       expect(result.pass).toEqual(false)
+    })
+    it('should call mssql for sql protocol', async () => {
+      const url = 'mssql://localhost:1433'
+      const result = await Contester.test(url)
+      expect(clients.mssql).toHaveBeenCalled()
+      expect(result.pass).toEqual(false)
+    })
+    it('should throw if protocol is nto support', async () => {
+      const url = 'unknow://localhost:1433'
+      await expect(Contester.test(url)).rejects
+        .toThrow('Protocol:unknow is not supported.')
     })
   })
 })
