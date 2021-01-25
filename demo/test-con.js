@@ -21,6 +21,10 @@ const contester = new Contester([
   {
     name: 'mongo',
     uri: 'mongodb://localhost:27917/mongodb'
+  },
+  {
+    name: 'mssql',
+    uri: 'mssql://localhost:1433/mssql'
   }
 ])
 

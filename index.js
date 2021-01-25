@@ -20,6 +20,8 @@ class Contester {
     if (clients[protocol]) {
       const result = await clients[protocol](url)
       return result
+    } else {
+      throw new Error(`Protocol:${protocol} is not supported.`)
     }
   }
 

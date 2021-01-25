@@ -3,5 +3,6 @@ module.exports = {
   http: require('./http'),
   https: require('./http'),
   mysql: require('./mysql'),
-  redis: require('./redis')
+  redis: require('./redis'),
+  mssql: require('./mssql')
 }
